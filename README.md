@@ -69,7 +69,7 @@ python -m trainer_scripts.train_protection_model_all_attention
 
 ## Citation
 
-**If you find our dataset or paper useful for your research , please include the following citation:**
+If you find our dataset or paper useful for your research , please include the following citation:
 
 ```
 
@@ -79,6 +79,7 @@ python -m trainer_scripts.train_protection_model_all_attention
     booktitle={ArXiv preprint arXiv:2112.09151},
     year={2021}
 }
+
 ```
 
 </br>
