@@ -68,8 +68,8 @@ python -m trainer_scripts.train_protection_model_all_attention
 
 **If you find our dataset or paper useful for your research , please include the following citation:**
 
-```
 
+```
 @inproceedings{aneja2021tafim,
     title={{TAFIM}: Targeted {A}dversarial {A}ttacks against {F}acial {I}mage {M}anipulations}, 
     author={Shivangi Aneja and Lev Markhasin and Matthias Nie{\ss}ner},
