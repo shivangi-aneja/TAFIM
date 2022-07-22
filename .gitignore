@@ -1,0 +1,5 @@
+__pycache__
+.idea/*
+model_checkpoints/*
+tf_logs/*
+attack_results/*

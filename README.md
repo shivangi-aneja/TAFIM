@@ -58,7 +58,7 @@ python -m trainer_scripts.train_protection_model_simswap
 python -m trainer_scripts.train_protection_model_styleclip
 
 # For protection against Jpeg Compression
-python -m trainer_scripts.train_protection_model_pSp_jpeg_randomized
+python -m trainer_scripts.train_protection_model_pSp_jpeg
 
 # For combining perturbations from multiple manipulation methods 
 python -m trainer_scripts.train_protection_model_all_attention
