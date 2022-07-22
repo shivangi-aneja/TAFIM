@@ -62,14 +62,14 @@ python -m trainer_scripts.train_protection_model_pSp_jpeg
 
 # For combining perturbations from multiple manipulation methods 
 python -m trainer_scripts.train_protection_model_all_attention
-* ```
+```
 
 
 </br>
 
-## Citation
+### Citation
 
-**If you find our dataset or paper useful for your research , please include the following citation:**
+If you find our dataset or paper useful for your research , please include the following citation:
 
 ```
 
