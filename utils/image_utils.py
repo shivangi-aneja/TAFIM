@@ -11,3 +11,12 @@ def create_target_img(batch_size=1, size=resize_size, img_transform=None, color=
     image = img_transform(image)
     images = torch.repeat_interleave(image.unsqueeze(0), repeats=batch_size, dim=0)
     return images
+
+
+def tensor2im(var):
+    var = var.permute(1, 2, 0).cpu().detach().numpy()
+    var = ((var + 1) / 2)
+    var[var < 0] = 0
+    var[var > 1] = 1
+    var = var * 255
+    return var

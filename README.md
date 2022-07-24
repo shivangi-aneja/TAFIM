@@ -65,6 +65,12 @@ python -m trainer_scripts.train_protection_model_all_attention
 ```
 
 
+* **Evaluation:**  Once training is complete, then to evaluate, specify the path to protection model and evaulate. For instance, to evaluate for the self reconstruction task for pSp encoder, excecute:
+```
+    python -m testing_scripts.test_protection_model_pSp -p protection_model.pth
+```
+
+
 </br>
 
 ### Citation

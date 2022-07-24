@@ -24,7 +24,7 @@ if __name__ == '__main__':
     config_parser = ArgumentParser()
     config_parser.add_argument('--train_imgs', default=5000, type=int, help='Number of Training Images')
     config_parser.add_argument('--perturb_wt', default=10, type=float, help='Perturbation Weight')
-    config_parser.add_argument('--batch_size', default=1, type=int, help='Perturbation Weight')
+    config_parser.add_argument('--batch_size', default=1, type=int, help='Batch Size')
     config_parser.add_argument('--loss_type', default='l2', type=str, help='Loss Type')
     config_parser.add_argument('--lr', default=0.0001, type=float, help='Learning Rate')
     opts = config_parser.parse_args()
@@ -153,15 +153,15 @@ if __name__ == '__main__':
 
         # If the new loss is better than old loss, update the adversarial noise
         if val_current_loss['full'] < best_loss:
-            save_filename_model = 'combined_%s_net_%sperturb_%simgs_%s_%sbatch_%s_loss_%s_lr.pth' % (optimizer.__name__, perturb_wt, train_imgs, net_noise, batch_size, loss_type, optim_args['lr'])
+            save_filename_model = 'pSp_protection_%s_%sperturb.pth' % (net_noise, perturb_wt)
             save_path = os.path.join(model_ckpt_pth, save_filename_model)
             print('Updating the noise model')
-            torch.save({"protection_net": protection_model.state_dict(), "global_noise": adv_noise.detach()}, save_path)
+            torch.save({"protection_net": protection_model.state_dict(), "global_noise": adv_noise.detach(), "perturb_wt": perturb_wt}, save_path)
             best_loss = val_current_loss['full']
 
         print('Epoch {} / {} \t Train Loss: {:.3f} \t Val Acc: {:.3f}'.format(epoch, n_epochs, train_current_loss['full'], val_current_loss['full']))
 
-        save_filename_model = 'combined_%s_net_%sperturb_%simgs_%s_%sbatch_%s_loss_%s_lr_latest.pth' % (optimizer.__name__, perturb_wt, train_imgs, net_noise, batch_size, loss_type, optim_args['lr'])
+        save_filename_model = 'pSp_protection_%s_%sperturb_latest.pth' % (net_noise, perturb_wt)
         save_path = os.path.join(model_ckpt_pth, save_filename_model)
-        torch.save({"protection_net": protection_model.state_dict(), "global_noise": adv_noise.detach()}, save_path)
+        torch.save({"protection_net": protection_model.state_dict(), "global_noise": adv_noise.detach(), "perturb_wt": perturb_wt}, save_path)
 
