@@ -43,7 +43,7 @@ if __name__ == '__main__':
     print("perturb Weight", checkpoint['perturb_wt'])
     pSp_net.eval().to(device)
 
-    protection_model = GenPix2Pix(6, 3, ngf, net_noise, 'batch', not no_dropout, init_type, init_gain).to(device)
+    protection_model = GenPix2Pix(6, 3, ngf, net_noise, norm, not no_dropout, init_type, init_gain).to(device)
     protection_model.load_state_dict(checkpoint['protection_net'])
     protection_model.to(device)
     protection_model.eval()

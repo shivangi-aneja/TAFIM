@@ -11,6 +11,7 @@ simswap_arcface_ckpt = os.path.join(BASE_DIR, 'model_checkpoints', 'SimSwap', 'a
 STYLECLIP_BASE_DIR = os.path.join(BASE_DIR, 'model_checkpoints', 'StyleClip')
 
 # Checkpoint paths for results
+MANIPULATION_TESTS_BASE_DIR = os.path.join(BASE_DIR, 'tests')
 ATTACK_BASE_DIR = os.path.join(BASE_DIR, 'attack_results')
 PSP_ATTACK_BASE_DIR = os.path.join(ATTACK_BASE_DIR, 'pSp')
 SIMSWAP_ATTACK_BASE_DIR = os.path.join(ATTACK_BASE_DIR, 'SimSwap')

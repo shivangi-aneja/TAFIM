@@ -31,8 +31,7 @@ meta_data = {
 
 class StyleClip(nn.Module):
 
-    def __init__(self, perturb_wt, learn_noise=False, attack_loss_type='l2', dct_loss_type='l2',
-                 is_combined=False, is_test=False):
+    def __init__(self, perturb_wt, attack_loss_type='l2', is_test=False):
         super(StyleClip, self).__init__()
 
         self.perturb_wt = perturb_wt
@@ -58,7 +57,11 @@ class StyleClip(nn.Module):
         opts_e4e = ckpt_e4e['opts']
         opts_e4e['checkpoint_path'] = e4e_path
         self.pSp_model = pSp(Namespace(**opts_e4e)).eval()
-        self.criterion = torch.nn.MSELoss()
+        # Loss Function
+        if attack_loss_type == 'l1':
+            self.criterion = torch.nn.L1Loss()
+        elif attack_loss_type == 'l2':
+            self.criterion = torch.nn.MSELoss()
 
     def set_input(self, x, y):
         self.x = x.to(device)

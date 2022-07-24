@@ -13,9 +13,10 @@ def create_target_img(batch_size=1, size=resize_size, img_transform=None, color=
     return images
 
 
-def tensor2im(var):
+def tensor2im(var, fs=False):
     var = var.permute(1, 2, 0).cpu().detach().numpy()
-    var = ((var + 1) / 2)
+    if not fs:
+        var = ((var + 1) / 2)
     var[var < 0] = 0
     var[var > 1] = 1
     var = var * 255
