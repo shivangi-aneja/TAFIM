@@ -79,11 +79,15 @@ If you find our dataset or paper useful for your research , please include the f
 
 ```
 
-@inproceedings{aneja2021tafim,
-    title={{TAFIM}: Targeted {A}dversarial {A}ttacks against {F}acial {I}mage {M}anipulations}, 
-    author={Shivangi Aneja and Lev Markhasin and Matthias Nie{\ss}ner},
-    booktitle={ArXiv preprint arXiv:2112.09151},
-    year={2021}
+@InProceedings{aneja2022tafim,
+               author="Aneja, Shivangi and Markhasin, Lev and Nie{\ss}ner, Matthias",
+               title="TAFIM: Targeted Adversarial Attacks Against Facial Image Manipulations",
+               booktitle="Computer Vision -- ECCV 2022",
+               year="2022",
+               publisher="Springer Nature Switzerland",
+               address="Cham",
+               pages="58--75",
+               isbn="978-3-031-19781-9"
 }
 ```
 
